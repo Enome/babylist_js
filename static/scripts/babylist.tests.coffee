@@ -61,7 +61,6 @@ test 'add adds a product to products', () ->
 test 'add cannot add the same product twice', () ->
 	vm = BabyList.ViewModel
 	p = new BabyList.Product 'Foobar', 15, 1
-	console.log vm.products()
 	vm.add p
 	equals vm.products().length, 1
 
@@ -82,3 +81,15 @@ test 'remove by id removes the product', () ->
 	vm.remove(1)
 	equals vm.products().length, 0
 
+test 'export returns person and products as json', () ->
+	vm = BabyList.ViewModel
+	p = new BabyList.Product 'Foobar', 15, 1
+
+	vm.person.name('foobar')
+	vm.person.phone('foobar')
+	vm.person.email('foobar')
+
+	vm.products = ko.observableArray [ p ]
+
+	result = vm.export()
+	equals result, '{"person":{"name":"foobar","email":"foobar","phone":"foobar"},"products":[{"name":"Foobar","price":15,"id":1}]}'

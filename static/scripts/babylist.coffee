@@ -46,7 +46,12 @@ ViewModel =
 			total += product.price
 
 		return total
-
+	
+	export : () ->
+		return ko.toJSON
+			person: @person
+			products: @products
+		
 BabyList =
 	Product : Product
 	ViewModel : ViewModel

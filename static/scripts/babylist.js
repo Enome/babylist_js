@@ -58,6 +58,12 @@
         total += product.price;
       }
       return total;
+    },
+    "export": function() {
+      return ko.toJSON({
+        person: this.person,
+        products: this.products
+      });
     }
   };
   BabyList = {
