@@ -62,7 +62,6 @@
   };
   BabyList = {
     Product: Product,
-    Person: Person,
     ViewModel: ViewModel
   };
   window.BabyList = BabyList;

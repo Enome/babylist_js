@@ -49,7 +49,6 @@ ViewModel =
 
 BabyList =
 	Product : Product
-	Person : Person
 	ViewModel : ViewModel
 
 #manually attach to global object
