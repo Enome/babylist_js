@@ -18,6 +18,11 @@
     return Product;
   })();
   ViewModel = {
+    person: {
+      name: ko.observable(),
+      email: ko.observable(),
+      phone: ko.observable()
+    },
     products: ko.observableArray([]),
     get: function(id) {
       var p, _i, _len, _ref;
@@ -57,6 +62,7 @@
   };
   BabyList = {
     Product: Product,
+    Person: Person,
     ViewModel: ViewModel
   };
   window.BabyList = BabyList;

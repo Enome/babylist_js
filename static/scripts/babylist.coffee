@@ -15,6 +15,11 @@ class Product
 		@id = id
 
 ViewModel =
+	person :
+		name : ko.observable()
+		email : ko.observable()
+		phone : ko.observable()
+
 	products : ko.observableArray([])
 
 	get :  (id) ->
@@ -44,6 +49,7 @@ ViewModel =
 
 BabyList =
 	Product : Product
+	Person : Person
 	ViewModel : ViewModel
 
 #manually attach to global object
