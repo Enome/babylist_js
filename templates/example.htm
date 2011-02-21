@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Simple Example</title>
+	<script src='//ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js' type='text/javascript' charset='utf-8'></script>
+	<script type='text/javascript' src='/static/scripts/jquery.tmpl.js'></script>
+	<script type='text/javascript' src='/static/scripts/knockout-1.1.2.debug.js'></script>
+	<script src='/static/scripts/babylist.js' type='text/javascript'></script>
+	<script type='text/javascript'>
+		//shortcuts / imports
+		var viewModel = BabyList.ViewModel
+		var Product = BabyList.Product;
+
+		var products = viewModel.products;
+		var add = viewModel.add;
+		var remove = viewModel.remove;
+
+		$(function(){
+			ko.applyBindings(viewModel);	
+		});
+	</script>
+</head>
+<body>
+	<h1>BabyList examples</h1>
+	<h2>Simple product list</h2>
+	<ul>
+	    <li>
+			Snowboard pants - 15 euro <a href="#" data-bind='click: function(){ add( new Product("Snowboard pants", 15, 1) ) }'>add product</a>
+	    </li>
+	    <li>
+	        Boomerang - 25 euro <a href="#" data-bind='click: function(){ add( new Product("Boomerang", 25, 2) ) }'>add product</a>
+	    </li>
+	    <li>
+	        Book - 50 euro <a href="#" data-bind='click: function(){ add( new Product("Book", 50, 3) ) }'>add product</a>
+	    </li>
+	    <li>
+	        Belt - 5 euro <a href="#" data-bind='click: function(){ add( new Product("Belt", 5, 4) ) }'>add product</a>
+	    </li>
+	    <li>
+	        Knife - 90 euro <a href="#" data-bind='click: function(){ add( new Product("Knife", 90, 5) ) }'>add product</a>
+	    </li>
+	    <li>
+	        Knife - 90 euro <a href="#" data-bind='click: function(){ add( new Product("Knife", 90, 6) ) }'>add product</a>
+	    </li>
+	</ul>
+
+	<h2>Simple overview</h2>
+	<table cellspacing="0">
+	    <thead>
+	        <tr>
+	            <th>Product</th>
+	            <th>Price</th>
+	            <th>Actions</th>
+	        </tr>
+	    </thead>
+		<tbody data-bind='template: { name: "ProductRowTmpl", foreach: products }'>
+	    </tbody>
+	</table>
+	<p>
+		Total price: <span data-bind='text: viewModel.totalPrice()'></span> euro
+	</p>
+
+	<script id='ProductRowTmpl' type="html/text">
+		<tr>
+			<td>${name}</td>
+			<td>${price}</td>
+			<td><a data-bind='click: function(){ viewModel.remove(id); }'>remove</a></td>
+		</tr>
+	</script>
+</body>
+</html>
