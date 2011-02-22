@@ -28,16 +28,16 @@
 			Snowboard pants - 15 euro <a href="#" data-bind='click: function(){ add( new Product("Snowboard pants", 15, 1) ) }'>add product</a>
 	    </li>
 	    <li>
-	        Boomerang - 25 euro <a href="#" data-bind='click: function(){ add( new Product("Boomerang", 25, 2) ) }'>add product</a>
+	        Boomerang - 25 euro <a href="#" data-bind='click: function(){ add( new Product("Boomerang", 25.12, 2) ) }'>add product</a>
 	    </li>
 	    <li>
-	        Book - 50 euro <a href="#" data-bind='click: function(){ add( new Product("Book", 50, 3) ) }'>add product</a>
+	        Book - 50 euro <a href="#" data-bind='click: function(){ add( new Product("Book", 50.22, 3) ) }'>add product</a>
 	    </li>
 	    <li>
-	        Belt - 5 euro <a href="#" data-bind='click: function(){ add( new Product("Belt", 5, 4) ) }'>add product</a>
+	        Belt - 5 euro <a href="#" data-bind='click: function(){ add( new Product("Belt", 5.22, 4) ) }'>add product</a>
 	    </li>
 	    <li>
-	        Knife - 90 euro <a href="#" data-bind='click: function(){ add( new Product("Knife", 90, 5) ) }'>add product</a>
+	        Knife - 90 euro <a href="#" data-bind='click: function(){ add( new Product("Knife", 90.33, 5) ) }'>add product</a>
 	    </li>
 	    <li>
 	        Knife - 90 euro <a href="#" data-bind='click: function(){ add( new Product("Knife", 90, 6) ) }'>add product</a>
@@ -64,7 +64,7 @@
 		<tr>
 			<td>${name}</td>
 			<td>${price}</td>
-			<td><a data-bind='click: function(){ remove(id); }'>remove</a></td>
+			<td><a data-bind='click: function(){ viewModel.remove(id); }'>remove</a></td>
 		</tr>
 	</script>
 </body>

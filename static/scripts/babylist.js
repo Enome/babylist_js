@@ -57,7 +57,7 @@
         product = _ref[_i];
         total += product.price;
       }
-      return total;
+      return total.toFixed(2);
     },
     "export": function() {
       return ko.toJSON({

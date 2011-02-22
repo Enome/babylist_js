@@ -45,7 +45,7 @@ ViewModel =
 		for product in @products()
 			total += product.price
 
-		return total
+		return total.toFixed(2)
 	
 	export : () ->
 		return ko.toJSON
