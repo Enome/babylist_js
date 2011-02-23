@@ -62,6 +62,7 @@
     "export": function() {
       return ko.toJSON({
         person: this.person,
+        totalPrice: this.totalPrice(),
         products: this.products
       });
     }

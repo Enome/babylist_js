@@ -50,6 +50,7 @@ ViewModel =
 	export : () ->
 		return ko.toJSON
 			person: @person
+			totalPrice: @totalPrice()
 			products: @products
 		
 BabyList =

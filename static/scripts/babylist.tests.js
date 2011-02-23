@@ -90,6 +90,6 @@
     vm.person.email('foobar');
     vm.products = ko.observableArray([p]);
     result = vm["export"]();
-    return equals(result, '{"person":{"name":"foobar","email":"foobar","phone":"foobar"},"products":[{"name":"Foobar","price":15,"id":1}]}');
+    return equals(result, '{"person":{"name":"foobar","email":"foobar","phone":"foobar"},"totalPrice":15,"products":[{"name":"Foobar","price":15,"id":1}]}');
   });
 }).call(this);

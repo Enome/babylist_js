@@ -92,4 +92,4 @@ test 'export returns person and products as json', () ->
 	vm.products = ko.observableArray [ p ]
 
 	result = vm.export()
-	equals result, '{"person":{"name":"foobar","email":"foobar","phone":"foobar"},"products":[{"name":"Foobar","price":15,"id":1}]}'
+	equals result, '{"person":{"name":"foobar","email":"foobar","phone":"foobar"},"totalPrice":15,"products":[{"name":"Foobar","price":15,"id":1}]}'
